@@ -16,10 +16,24 @@ Et pour l'utiliser, vous n'avez qu'à faire la commande suivante :
 ```bash
 python3 -m flake8
 ```
+Comme pour la compilation avec les flags, il est possible de créer un alias pour se simplifier la vie. Pour cela, ouvrez le fichier `~/.zshrc` :
+```bash
+nano ~/.zshrc
+```
+Et ajoutez la ligne suivante (vous pouvez mettre n'importe quel nom autre pour votre alias) :
+```bash
+alias flake8="python3 -m flake8"
+```
+
+### Le langage python
+
+Comme python est un langage de barbare non raffiné. Ici, plus besoin d'utiliser de `{}` ou de `;`. Python se base surtout sur l'**indentation**.
+
+#### Test header 4
 
 
 ## Inspirations && Sources
 
-- [github.com/overtekk/python_module]([https://github.com/Overtekk/so_long](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2000))
+- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2000)
 
 **Contact :** alebaron@student.42lehavre.fr
