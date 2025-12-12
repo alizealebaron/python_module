@@ -5,6 +5,8 @@
   <em>Python Fundamentals Through Garden Data</em>
 </h3>
 
+---
+
 ## Introduction à python
 
 Depuis la piscine et le début du tronc commun nous avons été habitué à utiliser le langage C. Bien que celui-ci soit très intéressant, il est temps d'apprendre à utiliser du python.
