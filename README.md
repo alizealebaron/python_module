@@ -1,5 +1,9 @@
-# python_module
-Vous trouverez tous les modules pythons du tronc commun de 42.
+<p align="center">
+  <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module_simple.png" width="120"/>
+</p>
+<h3 align="center">
+  <em>Python Fundamentals Through Garden Data</em>
+</h3>
 
 ## Introduction à python
 
