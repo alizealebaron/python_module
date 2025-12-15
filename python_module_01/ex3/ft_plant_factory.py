@@ -6,11 +6,13 @@ Date    : 2025/12/12
 
 
 class Plant:
+    """Constructor function"""
     def __init__(self, plant, height, days):
         self.plant = plant
         self.height = height
         self.days = days
 
+    """Object to string function"""
     def to_string(self):
         print(f"{self.plant} ({self.height}cm, {self.days} days)")
 

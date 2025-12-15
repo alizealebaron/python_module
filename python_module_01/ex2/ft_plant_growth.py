@@ -6,17 +6,21 @@ Date    : 2025/12/12
 
 
 class Plant:
+    """Constructor function"""
     def __init__(self, plant, height, days):
         self.plant = plant
         self.height = height
         self.days = days
 
+    """Object to string function"""
     def get_info(self):
         print(f"{self.plant}: {self.height}cm, {self.days} days old")
 
+    """Make the plant grow (height) one by one"""
     def grow(self):
         self.height += 1
 
+    """Make the plant grow (age) one by one"""
     def age(self):
         self.days += 1
 
