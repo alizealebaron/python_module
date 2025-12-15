@@ -17,7 +17,7 @@ class SecurePlant:
             self.__name = name
             self.__height = height
             self.__age = age
-            print("Plant created: Rose")
+            print(f"Plant created: {self.__name}")
 
     # +------------------------------------------------------------+
     # |                          Getters                           |

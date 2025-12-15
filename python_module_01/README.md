@@ -26,5 +26,7 @@
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
 - [pixees.fr/nsi_prem_pythonSequence](https://pixees.fr/informatiquelycee/n_site/nsi_prem_pythonSequence.html)
+- [w3schools.com/python/encapsulation](https://www.w3schools.com/python/python_encapsulation.asp)
+- [w3schools.com/python/inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 
 **Contact :** alebaron@student.42lehavre.fr
