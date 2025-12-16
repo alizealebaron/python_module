@@ -124,7 +124,8 @@ class PrizeFlower(FloweringPlant):
     # +------------------------------------------------------------+
 
     """Constructor function"""
-    def __init__(self, name: str, height: int, bloom: bool, color: str, prize: int):
+    def __init__(self, name: str, height: int, bloom: bool,
+                 color: str, prize: int):
         super().__init__(name, height, bloom, color)
         if (prize >= 0):
             self.__prize = prize
@@ -165,7 +166,8 @@ class PrizeFlower(FloweringPlant):
             print(f"{self.get_name()}: {self.get_height()}cm, "
                   f"{self.get_color()} flowers, "
                   f"Prize points: {self.__prize}")
-            
+
+
 class Garden:
 
     # +------------------------------------------------------------+
@@ -173,7 +175,7 @@ class Garden:
     # +------------------------------------------------------------+
 
     """Constructor function"""
-    def __init__(self, name : str):
+    def __init__(self, name: str):
         self.__name = name
         self.__tab_plants = [None] * 100
         self.__nb_plant = 0
@@ -192,16 +194,16 @@ class Garden:
 
     def get_nb_plant(self):
         return self.__nb_plant
-    
+
     def get_nb_plants(self):
         return self.__nb_plants
-    
+
     def get_nb_flower(self):
         return self.__nb_flower
-    
+
     def get_nb_flowerprize(self):
         return self.__nb_flowerprize
-    
+
     # +------------------------------------------------------------+
     # |                   Gestion of the Garden                    |
     # +------------------------------------------------------------+
@@ -216,29 +218,28 @@ class Garden:
             self.__nb_flower += 1
         if (plant.__class__.__name__ == "PrizeFlower"):
             self.__nb_flowerprize += 1
-    
+
     def water_plant(self):
         print(f"{self.__name} is helping all plants grow...")
-        for i in range (0, self.__nb_plant):
+        for i in range(0, self.__nb_plant):
             self.__tab_plants[i].grow()
             self.__total += 1
             print(f"{self.__tab_plants[i].get_name()} grew 1cm")
-    
+
     def calcul_score(self):
         score = 0
-        for i in range (0, self.__nb_plant):
+        for i in range(0, self.__nb_plant):
             score += self.__tab_plants[i].get_height()
             class_name = self.__tab_plants[i].__class__.__name__
             if (class_name == "PrizeFlower"):
                 score += self.__tab_plants[i].get_prize()
-            if (class_name == "FloweringPlant" or class_name
-                == "PrizeFlower"):
-                    if (self.__tab_plants[i].get_bloom()):
-                        score += 15
+            if (class_name == "FloweringPlant" or class_name == "PrizeFlower"):
+                if (self.__tab_plants[i].get_bloom()):
+                    score += 15
         return score
 
     def test_height(self):
-        for i in range (0, self.__nb_plant):
+        for i in range(0, self.__nb_plant):
             if (self.__tab_plants[i].get_height() < 0):
                 return 0
         return 1
@@ -251,7 +252,7 @@ class Garden:
         print(f"=== {self.__name}'s Garden Report ===")
         print("Plants in garden:")
 
-        for i in range (0, self.__nb_plant):
+        for i in range(0, self.__nb_plant):
             print("- ", end="")
             self.__tab_plants[i].to_string()
 
@@ -262,6 +263,7 @@ class Garden:
               f"{self.__nb_flower} flowering, "
               f"{self.__nb_flowerprize} prize flowers")
 
+
 class GardenStats:
     # +--------------------------------------------------------+
     # |                      Constructor                       |
@@ -271,8 +273,9 @@ class GardenStats:
     def __init__(self):
         self.nb_plant = 0
         self.nb_flower = 0
-        self.nb_flowerprize = 0     
-        
+        self.nb_flowerprize = 0
+
+
 class GardenManager:
 
     # +------------------------------------------------------------+
@@ -290,19 +293,20 @@ class GardenManager:
     # +------------------------------------------------------------+
 
     def test_height(self):
-        for i in range (0, self.nb_garden):
+        for i in range(0, self.nb_garden):
             if (self.tab_garden[i].test_height() == 0):
                 print("Height validation test: False")
-                return 0;
+                return 0
         print("Height validation test: True")
 
+    """Object to string"""
     def to_string(self):
         print("Garden scores - ", end="")
-        for i in range (0, self.nb_garden):
+        for i in range(0, self.nb_garden):
             print(f"{self.tab_garden[i].get_name()}: "
-                  f"{self.tab_garden[i].calcul_score()}", end= "")
+                  f"{self.tab_garden[i].calcul_score()}", end="")
             if (i != (self.nb_garden - 1)):
-                print(",", end= " ")
+                print(",", end=" ")
             else:
                 print(".")
         print(f"Total gardens managed: {self.nb_garden}")
@@ -315,11 +319,12 @@ class GardenManager:
         self.stats.nb_flower = 0
         self.stats.nb_plant = 0
         self.stats.nb_flowerprize = 0
-        for i in range (0, self.nb_garden):
+        for i in range(0, self.nb_garden):
             garden = self.tab_garden[i]
             self.stats.nb_flower += garden.get_nb_flower()
             self.stats.nb_flowerprize += garden.get_nb_flowerprize()
             self.stats.nb_plant += garden.get_nb_plants()
+
 
 # +----------------------------------------------------------------+
 # |                              Main                              |
