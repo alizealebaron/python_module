@@ -5,10 +5,10 @@ Date    : 2025/12/17
 """
 
 
-def check_temperature(temp_str : str):
+def check_temperature(temp_str: str):
     try:
         int(temp_str)
-    except:
+    except ValueError:
         print(f"Error: '{temp_str}' is not a valid number")
     else:
         temp = int(temp_str)
@@ -18,6 +18,7 @@ def check_temperature(temp_str : str):
             print(f"Error: {temp}°C is too cold for plants (min 0°C)")
         else:
             print(f"Temperature {temp}°C is perfect for plants!")
+
 
 def test_temperature_input():
     check_temperature("25")
