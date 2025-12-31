@@ -4,6 +4,7 @@ Auteur  : alebaron
 Date    : 2025/12/31
 """
 
+
 # +----------------------------------------------------------------+
 # |                         Errors Class                           |
 # +----------------------------------------------------------------+
@@ -22,6 +23,7 @@ class WaterError(GardenError):
     """Error related to watering."""
     pass
 
+
 # +----------------------------------------------------------------+
 # |                        Garden Class                            |
 # +----------------------------------------------------------------+
@@ -36,7 +38,7 @@ class Plant:
         self.__name = name
         self.__water = water
         self.__sun = sun
-    
+
     # +------------------------------------------------------------+
     # |                          Getters                           |
     # +------------------------------------------------------------+
@@ -52,17 +54,19 @@ class Plant:
     """Name getter"""
     def get_name(self) -> str:
         return self.__name
-    
+
     # +------------------------------------------------------------+
     # |                          Others                            |
     # +------------------------------------------------------------+
 
     """Function who convert plant to string"""
     def to_string(self):
-        print(f"{self.__name}: healthy (water: {self.__water}, sun: {self.__sun})")
+        print(f"{self.__name}: healthy (water: {self.__water}, "
+              f"sun: {self.__sun})")
 
     def water_plant(self):
         self.__water += 1
+
 
 class GardenManager:
     # +------------------------------------------------------------+
@@ -124,22 +128,24 @@ class GardenManager:
                 water_level = plant.get_water()
                 sunlight_hours = plant.get_sun()
                 if (water_level < 1):
-                    raise WaterError(f"Water level {water_level} is too low (min 1)")
+                    raise WaterError(f"Water level {water_level} "
+                                     f"is too low (min 1)")
                 if (water_level > 10):
-                    raise WaterError(f"Water level {water_level} is too high (max 10)")
+                    raise WaterError(f"Water level {water_level} "
+                                     f"is too high (max 10)")
                 if (sunlight_hours < 2):
                     raise PlantError(f"Sunlight hours {sunlight_hours} "
-                                    f"is too low (min 2)")
+                                     f"is too low (min 2)")
                 if (sunlight_hours > 12):
                     raise PlantError(f"Sunlight hours {sunlight_hours} "
-                                    f"is too high (max 12)")
+                                     f"is too high (max 12)")
             except GardenError as error:
                 is_health = 0
                 print(f"Error checking {plant.get_name()}: {error}")
 
             if (is_health):
                 plant.to_string()
-    
+
     """Testing error recovery"""
     def error_recovery(self) -> None:
         is_error = False
@@ -183,7 +189,6 @@ def main() -> None:
     # Test 3 : Check error recovery
     print("\nTesting error recovery...")
     garden.error_recovery()
-
 
     print("\nGarden management system test complete!")
 
