@@ -10,14 +10,17 @@ Date    : 2025/12/17
 # +----------------------------------------------------------------+
 
 class GardenError(Exception):
+    """Base exception for garden-related errors."""
     pass
 
 
 class PlantError(GardenError):
+    """Error related to plants."""
     pass
 
 
 class WaterError(GardenError):
+    """Error related to watering."""
     pass
 
 
@@ -26,6 +29,7 @@ class WaterError(GardenError):
 # +----------------------------------------------------------------+
 
 def test_error():
+    """Tests different Python error types using garden_operations."""
     # ====== Begin & Initialisation ======
 
     print("=== Custom Garden Errors Demo ===")
