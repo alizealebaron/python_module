@@ -4,33 +4,29 @@ Auteur  : alebaron
 Date    : 2025/12/17
 """
 
-"""
-Fonction de vérification des paramètres
-"""
+
 def garden_operations(n: int, div=None, file=None, key=None) -> None:
     # Initialisation of usefull variables
 
     dico = {'plant': 'Amaryllis', 'temperature': '20°C'}
     value = int(n)
 
-	# Test who will trigger an error (maybe)
+    # Test who will trigger an error (maybe)
 
-	# Test 1 : Division
-    if (div != None):
-        useless1 = value / div
-	
-	# Test 2 : Open file
-    if (file != None):
+    # Test 1 : Division
+    if (div is not None):
+        _ = value / div
+
+    # Test 2 : Open file
+    if (file is not None):
         useless2 = open(file, "r")
         useless2.close()
-	
-    # Test 3 : Dictionnary 
-    if (key != None):
-        useless3 = dico[key]
 
-"""
-Fonction de test
-"""
+    # Test 3 : Dictionnary
+    if (key is not None):
+        _ = dico[key]
+
+
 def test_error_types():
 
     # ====== Begin & Initialisation ======
@@ -49,7 +45,7 @@ def test_error_types():
         print("No error detected!")
 
     # === Test 2 : Zero Division Error ===
-	
+
     print("\nTesting ZeroDivisionError...")
 
     try:
@@ -95,6 +91,7 @@ def test_error_types():
         print("No error detected!")
 
     print("\nAll error types tested successfully!")
+
 
 if __name__ == "__main__":
     test_error_types()

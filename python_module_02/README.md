@@ -26,5 +26,6 @@
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
 - [w3schools.com/python/try_except](https://www.w3schools.com/python/python_try_except.asp)
+- [certiquizz.com/erreur-python](https://certiquizz.com/fr/cours/programmation/python/python-pour-developpeurs-le-guide-complet-et-avance/creer-ses-propres-types-d-exceptions)
 
 **Contact :** alebaron@student.42lehavre.fr
