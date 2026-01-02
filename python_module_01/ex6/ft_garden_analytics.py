@@ -361,4 +361,5 @@ garden1.to_string()
 
 print("")
 
+network.test_height()
 network.to_string()
