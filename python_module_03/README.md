@@ -26,5 +26,7 @@
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
 - [reddit.com/learnpython/argv](https://www.reddit.com/r/learnpython/comments/aomkwd/what_does_argv_do_exactly_and_howwhen_do_you_use/?tl=fr)
+- [courspython.com/tuple](https://courspython.com/tuple.html)
+
 
 **Contact :** alebaron@student.42lehavre.fr
