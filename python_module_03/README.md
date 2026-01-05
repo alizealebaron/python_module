@@ -29,5 +29,6 @@
 - [courspython.com/tuple](https://courspython.com/tuple.html)
 - [w3schools.com/sets](https://www.w3schools.com/python/python_sets.asp)
 - [geeksforgeeks.org/python-set-operations](https://www.geeksforgeeks.org/python/python-set-operations-union-intersection-difference-symmetric-difference/)
+- [courspython.com/dictionnaire](https://courspython.com/dictionnaire.html)
 
 **Contact :** alebaron@student.42lehavre.fr
