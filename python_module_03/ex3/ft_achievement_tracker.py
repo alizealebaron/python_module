@@ -9,23 +9,26 @@ if __name__ == "__main__":
     # === Initialisation des Achievement ===
 
     achievement = ["Taking Inventory",
-                    "Getting Wood",
-                    "Getting Wood",
-                    "Benchmaking",
-                    "Time to Mine!",
-                    "Hot Topic",
-                    "Acquire Hardware",
-                    "The Lie",
-                    "Awarded All Trophies",
-                    "Music to my Ears",
-                    "Super Sonic",
-                    "Bee our guest"]
+                   "Getting Wood",
+                   "Getting Wood",
+                   "Benchmaking",
+                   "Time to Mine!",
+                   "Hot Topic",
+                   "Acquire Hardware",
+                   "The Lie",
+                   "Awarded All Trophies",
+                   "Music to my Ears",
+                   "Super Sonic",
+                   "Bee our guest"]
 
     # === Attribution des achievements ===
 
-    remy_achievement = [achievement[0], achievement[1], achievement[6], achievement[7], achievement[10]]
-    noem_achievement = [achievement[0], achievement[1], achievement[3], achievement[4]]
-    coin_achievement = [achievement[0], achievement[1], achievement[3], achievement[11], achievement[10]]
+    remy_achievement = [achievement[0], achievement[1], achievement[6],
+                        achievement[7], achievement[10]]
+    noem_achievement = [achievement[0], achievement[1], achievement[3],
+                        achievement[4]]
+    coin_achievement = [achievement[0], achievement[1], achievement[3],
+                        achievement[11], achievement[10]]
 
     set_remy = set(remy_achievement)
     set_noem = set(noem_achievement)
@@ -80,5 +83,3 @@ if __name__ == "__main__":
     print(f"Noémie vs Rémy common: {common_fight}")
     print(f"Noémie unique: {noem_unique}")
     print(f"Rémy unique: {remy_unique}")
-
-
