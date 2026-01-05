@@ -51,6 +51,32 @@ def afficher_inventaire(inv: dict, nom: str):
     print(f"Item count: {inv_nb_item} items")
     print("Categories: " +", ".join(f"{categorie}({value})" for categorie, value in ens_categ.items()))
 
+def transaction_inventaire(inv: dict, objet: str, quantite: int,
+                           donneur: str, receveur: str) -> dict:
+
+    quantite_inv = inv[donneur].get(objet).get("quantité")
+
+    # Vérification de la présence de l'objet dans l'inventaire
+    if inv[donneur].get(objet) is None:
+        print(f"Erreur : L'objet {objet} n'existe pas dans l'inventaire de {donneur}")
+    elif quantite_inv < quantite:
+        print(f"Erreur : Il n'y a pas assez de {objet}.")
+    else:
+        print(f"\n=== Transaction: {donneur} gives {receveur} {quantite} {objet} ===")
+        inv[donneur].get(objet)["quantité"] -= quantite
+        inv[receveur].get(objet)["quantité"] += quantite
+        print("Transaction successful!\n")
+        print("=== Updated Inventories ===")
+        quantite_don = inv[donneur].get(objet).get("quantité")
+        quantite_rec = inv[receveur].get(objet).get("quantité")
+        print(f"{donneur} {objet}: {quantite_don}")
+        print(f"{receveur} {objet}: {quantite_rec}")
+        return inv
+
+def analyse_inventaire(inv: dict):
+    print(f"\n=== Inventory Analytics ===")
+
+    
 
 if __name__ == "__main__":
 
@@ -100,7 +126,7 @@ if __name__ == "__main__":
                 "type" : "ball",
                 "rareté": "uncommon",
                 "prix": 200,
-                "quantité": 5
+                "quantité": 10
             },
         }
     }
@@ -110,5 +136,12 @@ if __name__ == "__main__":
     # === Affichage d'un inventaire ===
 
     afficher_inventaire(player_inventaire, "Manu")
+
+    # Transaction d'un inventaire à un autre
+
+    player_inventaire = transaction_inventaire(player_inventaire, "Pokeball",
+                                               5, "Amélie", "Manu")
+
+    # Afficher total inventaire
 
 
