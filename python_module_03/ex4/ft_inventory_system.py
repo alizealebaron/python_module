@@ -4,16 +4,17 @@ Auteur  : alebaron
 Date    : 2026/01/05
 """
 
+
 def afficher_inventaire(inv: dict, nom: str):
     """Permet d'afficher l'inventaire d'un joueur précis"""
 
     # Récupération des données du joueur s'il existe
 
-    data = inv[nom];
+    data = inv[nom]
 
     if data is None:
         print(f"Erreur: Le joueur {nom} n'existe pas.")
-        return None;
+        return None
 
     print(f"=== {nom}'s Inventory ===")
 
@@ -35,7 +36,7 @@ def afficher_inventaire(inv: dict, nom: str):
         # Affichage
         print(f"{key} ({item_type}, {item_rarete}): "
               f"{item_quantite}x @ {item_prix} P each = {item_total} P")
-        
+
         # Mise à jour des informations
         inv_total += item_total
         inv_nb_item += 1
@@ -46,23 +47,27 @@ def afficher_inventaire(inv: dict, nom: str):
         else:
             ens_categ[item_type] += item_quantite
 
-
     print(f"\nInventory value: {inv_total} P")
     print(f"Item count: {inv_nb_item} items")
-    print("Categories: " +", ".join(f"{categorie}({value})" for categorie, value in ens_categ.items()))
+    print("Categories: " + ", ".join(f"{categorie}({value})"
+                                     for categorie, value
+                                     in ens_categ.items()))
+
 
 def transaction_inventaire(inv: dict, objet: str, quantite: int,
                            donneur: str, receveur: str) -> dict:
-    """Permet d'effectuer une transaction d'une quantité d'objet d'un jouer à un autre"""
+    """Permet d'effectuer une transaction d'une quantité d'objet"""
     quantite_inv = inv[donneur].get(objet).get("quantité")
 
     # Vérification de la présence de l'objet dans l'inventaire
     if inv[donneur].get(objet) is None:
-        print(f"Erreur : L'objet {objet} n'existe pas dans l'inventaire de {donneur}")
+        print(f"Erreur : L'objet {objet} n'existe "
+              f"pas dans l'inventaire de {donneur}")
     elif quantite_inv < quantite:
         print(f"Erreur : Il n'y a pas assez de {objet}.")
     else:
-        print(f"\n=== Transaction: {donneur} gives {receveur} {quantite} {objet} ===")
+        print(f"\n=== Transaction: {donneur} gives"
+              f" {receveur} {quantite} {objet} ===")
         inv[donneur].get(objet)["quantité"] -= quantite
         inv[receveur].get(objet)["quantité"] += quantite
         print("Transaction successful!\n")
@@ -73,9 +78,10 @@ def transaction_inventaire(inv: dict, objet: str, quantite: int,
         print(f"{receveur} {objet}: {quantite_rec}")
         return inv
 
+
 def analyse_inventaire(inv: dict):
     """Affiche une analyse des inventaires des joueurs"""
-    print(f"\n=== Inventory Analytics ===")
+    print("\n=== Inventory Analytics ===")
 
     if inv is None:
         print("Il n'y a pas encore de joueur.")
@@ -106,10 +112,13 @@ def analyse_inventaire(inv: dict):
         if count_items > max_items.get("quantité"):
             max_items["quantité"] = count_items
             max_items["propriétaire"] = player
-    
-    print(f"Most valuable player: {max_money.get('propriétaire')} ({max_money.get('quantité')} P)")
-    print(f"Most items: {max_items.get('propriétaire')} ({max_items.get('quantité')} item(s))")
+
+    print(f"Most valuable player: {max_money.get('propriétaire')}"
+          f" ({max_money.get('quantité')} P)")
+    print(f"Most items: {max_items.get('propriétaire')} "
+          f"({max_items.get('quantité')} item(s))")
     print(f"Rarest items : {rarete_list}")
+
 
 if __name__ == "__main__":
 
@@ -118,19 +127,19 @@ if __name__ == "__main__":
     player_inventaire = {
         "Manu": {
             "Potion": {
-                "type" : "soin",
+                "type": "soin",
                 "rareté": "common",
                 "prix": 300,
                 "quantité": 2
             },
             "Pierre plante": {
-                "type" : "pierre",
+                "type": "pierre",
                 "rareté": "uncommon",
                 "prix": 500,
                 "quantité": 1
             },
             "Pokeball": {
-                "type" : "ball",
+                "type": "ball",
                 "rareté": "common",
                 "prix": 200,
                 "quantité": 15
@@ -138,25 +147,25 @@ if __name__ == "__main__":
         },
         "Amélie": {
             "Pierre feu": {
-                "type" : "pierre",
+                "type": "pierre",
                 "rareté": "uncommon",
                 "prix": 500,
                 "quantité": 2
             },
             "Multi Exp.": {
-                "type" : "objet",
+                "type": "objet",
                 "rareté": "rare",
                 "prix": 5000,
                 "quantité": 1
             },
             "Superball": {
-                "type" : "ball",
+                "type": "ball",
                 "rareté": "uncommon",
                 "prix": 600,
                 "quantité": 10
             },
             "Pokeball": {
-                "type" : "ball",
+                "type": "ball",
                 "rareté": "uncommon",
                 "prix": 200,
                 "quantité": 10

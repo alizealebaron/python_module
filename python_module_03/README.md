@@ -30,5 +30,6 @@
 - [w3schools.com/sets](https://www.w3schools.com/python/python_sets.asp)
 - [geeksforgeeks.org/python-set-operations](https://www.geeksforgeeks.org/python/python-set-operations-union-intersection-difference-symmetric-difference/)
 - [courspython.com/dictionnaire](https://courspython.com/dictionnaire.html)
+- [w3schools.com/yield](https://www.w3schools.com/python/ref_keyword_yield.asp)
 
 **Contact :** alebaron@student.42lehavre.fr
