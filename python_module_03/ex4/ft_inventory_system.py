@@ -53,7 +53,7 @@ def afficher_inventaire(inv: dict, nom: str):
 
 def transaction_inventaire(inv: dict, objet: str, quantite: int,
                            donneur: str, receveur: str) -> dict:
-
+    """Permet d'effectuer une transaction d'une quantité d'objet d'un jouer à un autre"""
     quantite_inv = inv[donneur].get(objet).get("quantité")
 
     # Vérification de la présence de l'objet dans l'inventaire
@@ -74,9 +74,42 @@ def transaction_inventaire(inv: dict, objet: str, quantite: int,
         return inv
 
 def analyse_inventaire(inv: dict):
+    """Affiche une analyse des inventaires des joueurs"""
     print(f"\n=== Inventory Analytics ===")
 
+    if inv is None:
+        print("Il n'y a pas encore de joueur.")
+        return None
+
+    max_money = {
+        "propriétaire": None,
+        "quantité": 0
+    }
+    max_items = {
+        "propriétaire": None,
+        "quantité": 0
+    }
+    rarete_list = []
+
+    for player, objet in inv.items():
+        count_items = 0
+        count_money = 0
+        for name, items in objet.items():
+            count_items += 1
+            count_money += items.get("prix") * items.get("quantité")
+            if items.get('rareté') == "rare":
+                rarete_list.append(name)
+
+        if count_money > max_money.get("quantité"):
+            max_money["quantité"] = count_money
+            max_money["propriétaire"] = player
+        if count_items > max_items.get("quantité"):
+            max_items["quantité"] = count_items
+            max_items["propriétaire"] = player
     
+    print(f"Most valuable player: {max_money.get('propriétaire')} ({max_money.get('quantité')} P)")
+    print(f"Most items: {max_items.get('propriétaire')} ({max_items.get('quantité')} item(s))")
+    print(f"Rarest items : {rarete_list}")
 
 if __name__ == "__main__":
 
@@ -144,4 +177,4 @@ if __name__ == "__main__":
 
     # Afficher total inventaire
 
-
+    analyse_inventaire(player_inventaire)
