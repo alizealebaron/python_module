@@ -1,5 +1,5 @@
 """
-Fichier : ft_data_stream.py
+Fichier : ft_ancient_text.py
 Auteur  : alebaron
 Date    : 2026/01/09
 """
@@ -27,5 +27,5 @@ if __name__ == "__main__":
         print("\nData recovery complete. Storage unit disconnected.")
 
     except FileNotFoundError:
-        print("Error: File 'ancient_fragment.txt' not found.")
+        print(f"Error: File '{filename}' not found.")
         print("\nData recovery incomplete. Storage unit disconnected.")
