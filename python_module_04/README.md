@@ -25,6 +25,6 @@
 ## 💡 Inspirations && Sources
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
-- 
+- [geeksforgeeks.org/how-to-read-file](https://www.geeksforgeeks.org/python/how-to-read-from-a-file-in-python/)
 
 **Contact :** alebaron@student.42lehavre.fr
