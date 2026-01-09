@@ -18,9 +18,9 @@
 
 **Commencé le :** 12/12/2025.
 
-**Rendu le :** Non rendu.
+**Rendu le :** 02/01/2025.
 
-**Note :** Non noté.
+**Note :** 100/100.
 
 ## 💡 Inspirations && Sources
 

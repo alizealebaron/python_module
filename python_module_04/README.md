@@ -2,7 +2,7 @@
   <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module_simple.png" width="120"/>
 </p>
 <h3 align="center">
-  <em>Data Engineering for Smart Agriculture</em>
+  <em>Cyber Archives Training Program</em>
 </h3>
 
 ---
@@ -16,16 +16,15 @@
 
 ## 🦆 Status
 
-**Commencé le :** 17/12/2025.
+**Commencé le :** 09/01/2026.
 
-**Rendu le :** 08/01/2026.
+**Rendu le :** Non rendu.
 
-**Note :** 100/100.
+**Note :** Non noté.
 
 ## 💡 Inspirations && Sources
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
-- [w3schools.com/python/try_except](https://www.w3schools.com/python/python_try_except.asp)
-- [certiquizz.com/erreur-python](https://certiquizz.com/fr/cours/programmation/python/python-pour-developpeurs-le-guide-complet-et-avance/creer-ses-propres-types-d-exceptions)
+- 
 
 **Contact :** alebaron@student.42lehavre.fr
