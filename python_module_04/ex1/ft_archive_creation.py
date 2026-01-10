@@ -25,16 +25,21 @@ if __name__ == "__main__":
 		# Ecriture du text dans le document
 		file.write(text)
 
+		#Fermeture propre du fichier
+		file.close()
+
+		# Ouverture en mode lecture du fichier
+		file = open(filename, "r")
+
 		# Lecture du document pour vérifier les données inscrites
 		print("Inscribing preservation data...")
-		file.seek(0)
 		content = file.read()
 		print(content)
 
 		#Fermeture propre du fichier
 		file.close()
 
-		print("\nData inscription complete. Storage unit sealed.")
+		print("Data inscription complete. Storage unit sealed.")
 		print(f"Archive '{filename}' ready for long-term preservation.")
 
 
