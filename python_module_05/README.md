@@ -25,6 +25,6 @@
 ## 💡 Inspirations && Sources
 
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
-- 
+- [docstring.fr/classe-abstraite](https://www.docstring.fr/glossaire/classe-abstraite/)
 
 **Contact :** alebaron@student.42lehavre.fr
