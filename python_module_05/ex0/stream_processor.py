@@ -204,4 +204,11 @@ if __name__ == "__main__":
 
     test_processor(data, proc, "Log")
 
+    # === Test 4 : Multi test ===
+    print("\nProcessing multiple data types through same interface...")
+
+    print("Result 1:", NumericProcessor().process([2, 2, 2]))
+    print("Result 2:", TextProcessor().process("Hello World"))
+    print("Result 3:", LogProcessor().process("INFO: System ready"))
+
     print("\nFoundation systems online. Nexus ready for advanced streams.")
