@@ -12,7 +12,7 @@ def access_archive(nom_fichier: str) -> None:
         with open(nom_fichier, "r") as file:
             print(f"ROUTINE ACCESS: Attempting access to '{nom_fichier}'...")
             print(f"SUCCESS: Archive recovered - '{file.read()}'")
-            print(f"STATUS: Normal operations resumed")
+            print("STATUS: Normal operations resumed")
     except FileNotFoundError:
         alert_message(nom_fichier, "Archive not found in storage matrix")
     except PermissionError:
@@ -24,7 +24,7 @@ def access_archive(nom_fichier: str) -> None:
 def alert_message(nom: str, text: str) -> None:
     print(f"CRISIS ALERT: Attempting access to '{nom}'...")
     print(f"RESPONSE: {text}")
-    print(f"STATUS: Crisis handled, system stable")
+    print("STATUS: Crisis handled, system stable")
 
 
 if __name__ == "__main__":
@@ -32,16 +32,16 @@ if __name__ == "__main__":
 
     # === Test 1 : Fichier inexistant ===
     access_archive("lost_archive.txt")
-    print("") # Saut de ligne
+    print("")
 
     # === Test 2 : Permission refusée ===
     access_archive("classified_vault.txt")
-    print("") # Saut de ligne
+    print("")
 
     # === Test 3 : Accéder à un dossier ===
     access_archive("folder")
-    print("") # Saut de ligne
+    print("")
 
     # === Test 4 : Fichier valide ===
     access_archive("standard_archive.txt")
-    print("") # Saut de ligne
+    print("")

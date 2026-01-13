@@ -9,23 +9,26 @@ import sys
 
 
 if __name__ == "__main__":
-	print("=== CYBER ARCHIVES - COMMUNICATION SYSTEM ===\n")
+    print("=== CYBER ARCHIVES - COMMUNICATION SYSTEM ===\n")
 
-	# Récupération des variables sur l'entrée standart
-	arch_id = input("Input Stream active. Enter archivist ID: ")
-	sys_nom = input("Input Stream active. Enter status report: ")
+    # Récupération des variables sur l'entrée standart
+    arch_id = input("Input Stream active. Enter archivist ID: ")
+    sys_nom = input("Input Stream active. Enter status report: ")
 
-	try:
-		# Affichage sur la sortie standart et la sortie erreur
-		sys.stdout.write(f"\n[STANDARD] Archive status from {arch_id}: {sys_nom}\n")
-		sys.stderr.write("[ALERT] System diagnostic: Communication channels verified\n")
-		sys.stdout.write("[STANDARD] Data transmission complete\n")
+    try:
+        # Affichage sur la sortie standart et la sortie erreur
+        sys.stdout.write(f"\n[STANDARD] Archive status from "
+                         f"{arch_id}: {sys_nom}\n")
+        sys.stderr.write("[ALERT] System diagnostic: Communication "
+                         "channels verified\n")
+        sys.stdout.write("[STANDARD] Data transmission complete\n")
 
-		# Autre façon de faire potentielle
-		# print(f"\n[STANDARD] Archive status from {arch_id}: {sys_nom}\n")
-		# print("[ALERT] System diagnostic: Communication channels verified\n", file=sys.stderr)
-		# print("[STANDARD] Data transmission complete\n")
+        # Autre façon de faire potentielle
+        # print(f"\n[STANDARD] Archive status from {arch_id}: {sys_nom}\n")
+        # print("[ALERT] System diagnostic: Communication channels verified\n",
+        #       file=sys.stderr)
+        # print("[STANDARD] Data transmission complete\n")
 
-		print("\nThree-channel communication test successful.")
-	except:
-		print("\nError : Three-channel communication test unsuccessful.")
+        print("\nThree-channel communication test successful.")
+    except Exception:
+        print("\nError : Three-channel communication test unsuccessful.")
