@@ -27,5 +27,6 @@
 - [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
 - [github.com/Tsuunen/python_module_05](https://github.com/Tsuunen/python_module_05)
 - [docstring.fr/classe-abstraite](https://www.docstring.fr/glossaire/classe-abstraite/)
+- [reddit.com/python_interfaces_choose_protocols_over_abc](https://www.reddit.com/r/Python/comments/1109kkx/python_interfaces_choose_protocols_over_abc/?show=original)
 
 **Contact :** alebaron@student.42lehavre.fr
