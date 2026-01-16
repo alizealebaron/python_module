@@ -17,13 +17,13 @@ from abc import ABC, abstractmethod
 # |                       Classe abstraite                         |
 # +----------------------------------------------------------------+
 
-class StreamBase(ABC):
+class DataStream(ABC):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: str, type_event: str):
+    def __init__(self, stream_id: str, type_event: str) -> None:
         super().__init__()
         self.__stream_id = stream_id
         self.__type_event = type_event
@@ -59,13 +59,13 @@ class StreamBase(ABC):
 # |                       Classe Héritaire                         |
 # +----------------------------------------------------------------+
 
-class SensorStream(StreamBase):
+class SensorStream(DataStream):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int):
+    def __init__(self, stream_id: int) -> None:
         super().__init__(f"SENSOR_{stream_id:03d}", "Environmental Data")
 
     # +------------------------------------------------------------+
@@ -95,13 +95,13 @@ class SensorStream(StreamBase):
                     f"avg temp: {sum(lst_temp) / len(lst_temp)}°C")
 
 
-class TransactionStream(StreamBase):
+class TransactionStream(DataStream):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int):
+    def __init__(self, stream_id: int) -> None:
         super().__init__(f"TRANS_{stream_id:03d}", "Financial Data")
 
     # +------------------------------------------------------------+
@@ -137,13 +137,13 @@ class TransactionStream(StreamBase):
             return (f"Transaction analysis: {len(data_batch)} readings processed, "
                     f"net flow: {sum(lst_buy) - sum(lst_sell)} units")
 
-class EventStream(StreamBase):
+class EventStream(DataStream):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int):
+    def __init__(self, stream_id: int) -> None:
         super().__init__(f"EVENT_{stream_id:03d}", "System Events")
 
     # +------------------------------------------------------------+
@@ -172,21 +172,21 @@ class StreamProcessor():
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.__streams = []
 
     # +------------------------------------------------------------+
     # |                         Accesseurs                         |
     # +------------------------------------------------------------+
 
-    def get_streams(self) -> List[StreamBase]:
+    def get_streams(self) -> List[DataStream]:
         return self.__streams
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
 
-    def add_streams(self, stream: StreamBase) -> None:
+    def add_streams(self, stream: DataStream) -> None:
         self.__streams.append(stream)
 
     def process(self, batch_data: Dict[str, List[any]]) -> None:

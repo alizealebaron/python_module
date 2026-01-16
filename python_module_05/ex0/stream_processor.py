@@ -67,7 +67,7 @@ class NumericProcessor(DataProcessor):
         except Exception:
             return (False)
 
-    def format_output(self, result) -> str:
+    def format_output(self, result: str) -> str:
         return (f"Output: {result}")
 
 
@@ -90,7 +90,7 @@ class TextProcessor(DataProcessor):
     def validate(self, data: str) -> bool:
         return (type(data) is str)
 
-    def format_output(self, result) -> str:
+    def format_output(self, result: str) -> str:
         return (f"Output: {result}")
 
 
@@ -155,7 +155,7 @@ class LogProcessor(DataProcessor):
         except Exception:
             return (False)
 
-    def format_output(self, result) -> str:
+    def format_output(self, result: str) -> str:
         return (f"Output: {result}")
 
 

@@ -39,21 +39,21 @@ class ProcessingPipeline(ABC):
 # |                Classe implémentant le Protocol                 |
 # +----------------------------------------------------------------+
 
-class InputStage(ProcessingStage):
+class InputStage():
     
-    def process(data) -> Any:
+    def process(data) -> Dict:
         pass
 
 
-class TransformStage(ProcessingStage):
+class TransformStage():
     
-    def process(data) -> Any:
+    def process(data) -> Dict:
         pass
 
 
-class OutputStage(ProcessingStage):
+class OutputStage():
     
-    def process(data) -> Any:
+    def process(data) -> Dict:
         pass
 
 
@@ -141,7 +141,24 @@ class StreamAdapter(ProcessingPipeline):
 # +----------------------------------------------------------------+
 
 class NexusManager():
-    pass
+
+    # +------------------------------------------------------------+
+    # |                        Constructeur                        |
+    # +------------------------------------------------------------+
+
+    def __init__(self):
+        self.pipelines = []
+    
+    # +------------------------------------------------------------+
+    # |                         Méthodes                           |
+    # +------------------------------------------------------------+
+
+    def add_pipeline(self, pipeline: Any) -> None:
+        self.pipelines.append(pipeline)
+    
+    def process_data(self):
+        # TODO: Aled
+        pass
 
 
 # +----------------------------------------------------------------+
@@ -151,3 +168,14 @@ class NexusManager():
 if __name__ == "__main__":
     print("=== CODE NEXUS - ENTERPRISE PIPELINE SYSTEM ===\n")
 
+    print("Initializing Nexus Manager...")
+    print("Pipeline capacity: 1000 streams/second")
+
+    print("\nCreating Data Processing Pipeline...")
+    print("Stage 1: Input validation and parsing")
+    print("Stage 2: Data transformation and enrichment")
+    print("Stage 3: Output formatting and delivery")
+
+    print("\n=== Multi-Format Data Processing ===\n")
+
+    print("\nNexus Integration complete. All systems operational.")
