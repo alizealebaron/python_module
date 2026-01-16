@@ -9,8 +9,8 @@ Date    : 2026/01/12
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
-from typing import Any, List, Dict, Union, Optional
 from abc import ABC, abstractmethod
+from typing import Any, List, Dict, Union, Optional # noqa: F401
 
 
 # +----------------------------------------------------------------+
@@ -55,6 +55,7 @@ class DataStream(ABC):
     def get_stats(self) -> Dict[str, Union[str, int, float]]:
         return {"id": self.__stream_id, "type": self.__type_event}
 
+
 # +----------------------------------------------------------------+
 # |                       Classe Héritaire                         |
 # +----------------------------------------------------------------+
@@ -65,8 +66,8 @@ class SensorStream(DataStream):
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int) -> None:
-        super().__init__(f"SENSOR_{stream_id:03d}", "Environmental Data")
+    def __init__(self, stream_id: str) -> None:
+        super().__init__(stream_id, "Environmental Data")
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
@@ -101,8 +102,8 @@ class TransactionStream(DataStream):
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int) -> None:
-        super().__init__(f"TRANS_{stream_id:03d}", "Financial Data")
+    def __init__(self, stream_id: str) -> None:
+        super().__init__(stream_id, "Financial Data")
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
@@ -143,8 +144,8 @@ class EventStream(DataStream):
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, stream_id: int) -> None:
-        super().__init__(f"EVENT_{stream_id:03d}", "System Events")
+    def __init__(self, stream_id: str) -> None:
+        super().__init__(stream_id, "System Events")
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
@@ -214,7 +215,7 @@ if __name__ == "__main__":
     data_sensor = ["temp:30.2", "temp:22.5", "humidity:65", "pressure:1013"]
     formatted_data = ", ".join(data_sensor)
 
-    processor_sensor = SensorStream(1)
+    processor_sensor = SensorStream("SENSOR_001")
     stats = processor_sensor.get_stats()
     result = processor_sensor.process_batch(data_sensor)
 
@@ -229,7 +230,7 @@ if __name__ == "__main__":
     data_sensor = ["buy:100", "sell:150", "buy:75"]
     formatted_data = ", ".join(data_sensor)
 
-    processor_transaction = TransactionStream(1)
+    processor_transaction = TransactionStream("TRANS_001")
     stats = processor_transaction.get_stats()
     result = processor_transaction.process_batch(data_sensor)
 
@@ -244,7 +245,7 @@ if __name__ == "__main__":
     data_sensor = ["login", "error", "logout"]
     formatted_data = ", ".join(data_sensor)
 
-    processor_event = EventStream(1)
+    processor_event = EventStream("EVENT_001")
     stats = processor_event.get_stats()
     result = processor_event.process_batch(data_sensor)
 
