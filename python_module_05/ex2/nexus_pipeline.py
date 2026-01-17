@@ -17,6 +17,7 @@ from typing import Any, List, Dict, Union, Optional, Protocol  # noqa: F401
 # |                          Interfaces                            |
 # +----------------------------------------------------------------+
 
+
 class ProcessingStage(Protocol):
 
     @abstractmethod
@@ -30,14 +31,14 @@ class ProcessingStage(Protocol):
 
 class ProcessingPipeline(ABC):
 
-    def __init__(self, pipeline_id : str):
+    def __init__(self, pipeline_id: str):
         super().__init__()
         self.stages = []
         self.pipeline_id = pipeline_id
 
     def add_stage(self, stage: Any) -> None:
         self.stages.append(stage)
-    
+
     @abstractmethod
     def process(self, data: any) -> Any:
         pass
@@ -48,7 +49,7 @@ class ProcessingPipeline(ABC):
 # +----------------------------------------------------------------+
 
 class JSONAdapter(ProcessingPipeline):
-    
+
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
@@ -60,14 +61,14 @@ class JSONAdapter(ProcessingPipeline):
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
 
-    def process(self, data: any, verbose : bool) -> None:
+    def process(self, data: any, verbose: bool) -> None:
         for stage in self.stages:
             data = stage.process(data, verbose)
         return data
 
 
 class CSVAdapter(ProcessingPipeline):
-    
+
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
@@ -79,14 +80,14 @@ class CSVAdapter(ProcessingPipeline):
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
 
-    def process(self, data: any, verbose : bool) -> None:
+    def process(self, data: any, verbose: bool) -> None:
         for stage in self.stages:
             data = stage.process(data, verbose)
         return data
 
 
 class StreamAdapter(ProcessingPipeline):
-    
+
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
@@ -98,7 +99,7 @@ class StreamAdapter(ProcessingPipeline):
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
 
-    def process(self, data: any, verbose : bool) -> None:
+    def process(self, data: any, verbose: bool) -> None:
         for stage in self.stages:
             data = stage.process(data, verbose)
         return data
@@ -114,9 +115,9 @@ class InputStage():
 
         if (verbose):
             # Interprétation de la valeur selon son type
-            if (type(data) == dict):
+            if (type(data) is dict):
                 print(f"Input: {data}")
-            elif (type(data) == str):
+            elif (type(data) is str):
                 if (len(data.split(",")) > 1):
                     print(f"Input: \"{data}\"")
                 else:
@@ -124,7 +125,7 @@ class InputStage():
             else:
                 print("Error detected in Stage 1: Invalid data format")
 
-        return data;
+        return data
 
 
 class TransformStage():
@@ -135,43 +136,47 @@ class TransformStage():
 
         # Transformation de la phrase
         try:
-            if (type(data) == dict):
+            if (type(data) is dict):
                 temp = data["value"]
                 unit = data["unit"]
                 if temp > 40:
-                    trans_data = (f"Processed temperature reading: {temp}°{unit} (High range)")
+                    trans_data = (f"Processed temperature reading: "
+                                  f"{temp}°{unit} (High range)")
                 elif temp < 0:
-                    trans_data = (f"Processed temperature reading: {temp}°{unit} (Low range)")
+                    trans_data = (f"Processed temperature reading: "
+                                  f"{temp}°{unit} (Low range)")
                 else:
-                    trans_data = (f"Processed temperature reading: {temp}°{unit} (Normal range)")
-            elif (type(data) == str):
+                    trans_data = (f"Processed temperature reading: "
+                                  f"{temp}°{unit} (Normal range)")
+            elif (type(data) is str):
                 data_split = data.split(",")
                 nb_action = 0
                 if (len(data_split) > 1):
                     for action in data_split:
                         if action == "action":
                             nb_action += 1
-                    trans_data = (f"User activity logged: {nb_action} actions processed")
+                    trans_data = (f"User activity logged: {nb_action} "
+                                  "actions processed")
                 else:
                     trans_data = "Stream summary: 5 readings, avg: 22.1°C"
         except Exception:
             print("Error detected in Stage 2: Invalid data format")
-            return data;
+            return data
 
         # Ecriture de la phrase si on est dans la partie 1 de l'exo
-        if(verbose):
+        if (verbose):
 
-            if (type(data) == dict):
-                print(f"Transform: Enriched with metadata and validation")
-            elif (type(data) == str):
+            if (type(data) is dict):
+                print("Transform: Enriched with metadata and validation")
+            elif (type(data) is str):
                 if (len(data.split(",")) > 2):
-                    print(f"Transform: Parsed and structured data")
+                    print("Transform: Parsed and structured data")
                 else:
-                    print(f"Transform: Aggregated and filtered")
+                    print("Transform: Aggregated and filtered")
             else:
                 print("Error detected in Stage 2: Invalid data format")
 
-        return trans_data;
+        return trans_data
 
 
 class OutputStage():
@@ -180,7 +185,7 @@ class OutputStage():
         if (verbose):
             print(f"Output: {data}")
 
-        return data;
+        return data
 
 
 # +----------------------------------------------------------------+
@@ -195,14 +200,14 @@ class NexusManager():
 
     def __init__(self) -> None:
         self.pipelines = []
-    
+
     # +------------------------------------------------------------+
     # |                         Méthodes                           |
     # +------------------------------------------------------------+
 
     def add_pipeline(self, pipeline: Any) -> None:
         self.pipelines.append(pipeline)
-    
+
     def process_data(self, data: any) -> None:
 
         pipeline_list = [id.pipeline_id for id in self.pipelines]
@@ -214,9 +219,10 @@ class NexusManager():
         for pipeline in self.pipelines:
             pipeline.process(data, verbose=False)
 
-        print(f"Chain result: {len(data)} records processed throught 3-stage pipeline")
+        print(f"Chain result: {len(data)} records processed "
+              "throught 3-stage pipeline")
         print("Performance: 95% efficiency, 0.2s total processing time")
-        
+
 
 # +----------------------------------------------------------------+
 # |                              Main                              |

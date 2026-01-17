@@ -10,7 +10,7 @@ Date    : 2026/01/12
 # +----------------------------------------------------------------+
 
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict, Union, Optional # noqa: F401
+from typing import Any, List, Dict, Union, Optional  # noqa: F401
 
 
 # +----------------------------------------------------------------+
@@ -46,7 +46,8 @@ class DataStream(ABC):
     def process_batch(self, data_batch: List[Any]) -> str:
         pass
 
-    def filter_data(self, data_batch: List[Any], criteria: Optional[str] = None) -> List[Any]:
+    def filter_data(self, data_batch: List[Any], criteria:
+                    Optional[str] = None) -> List[Any]:
         if criteria is not None:
             data_batch = [item for item in data_batch if criteria in item]
 
@@ -76,7 +77,7 @@ class SensorStream(DataStream):
     def process_batch(self, data_batch: List[Any]) -> str:
 
         lst_temp = []
-        
+
         for data in data_batch:
             if type(data) is str and data.startswith("temp"):
                 data_split = data.split(":")
@@ -86,8 +87,9 @@ class SensorStream(DataStream):
                         temp = float(data_split[1])
                         lst_temp.append(temp)
                     except ValueError:
-                        print("Erreur lors de la conversion de la température.")
-                
+                        print("Erreur lors de la conversion "
+                              "de la température.")
+
         if len(lst_temp) == 0:
             return (f"Sensor analysis: {len(data_batch)} readings processed, "
                     f"avg temp: no temperature data found")
@@ -113,30 +115,33 @@ class TransactionStream(DataStream):
 
         lst_sell = []
         lst_buy = []
-        
+
         for data in data_batch:
 
             data_split = data.split(":")
 
             if type(data) is str:
-                
+
                 if len(data_split) == 2:
                     try:
                         temp = int(data_split[1])
-                        
+
                         if data.startswith("sell"):
                             lst_sell.append(temp)
                         elif data.startswith("buy"):
                             lst_buy.append(temp)
                     except ValueError:
                         pass
-        
+
         if len(lst_sell) == 0 & len(lst_buy) == 0:
-            return (f"Transaction analysis: {len(data_batch)} readings processed, "
-                    f"net flow: no data")
+            return (f"Transaction analysis: {len(data_batch)} "
+                    "readings processed, "
+                    "net flow: no data")
         else:
-            return (f"Transaction analysis: {len(data_batch)} readings processed, "
+            return (f"Transaction analysis: {len(data_batch)} "
+                    "readings processed, "
                     f"net flow: {sum(lst_buy) - sum(lst_sell)} units")
+
 
 class EventStream(DataStream):
 
@@ -154,11 +159,11 @@ class EventStream(DataStream):
     def process_batch(self, data_batch: List[Any]) -> str:
 
         nb_error = 0
-        
+
         for data in data_batch:
             if type(data) is str and data == ("error"):
                 nb_error += 1
-                
+
         return (f"Event analysis: {len(data_batch)} events, "
                 f"{nb_error} error detected")
 
@@ -200,6 +205,7 @@ class StreamProcessor():
                 print(f"- {result}")
             else:
                 print(f"- No data found for stream {stream.get_stream_id()}")
+
 
 # +----------------------------------------------------------------+
 # |                             Main                               |

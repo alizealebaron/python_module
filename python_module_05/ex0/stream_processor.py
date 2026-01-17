@@ -9,7 +9,8 @@ Date    : 2026/01/10
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
-from typing import Any, List, Dict, Union, Optional # noqa: F401
+
+from typing import Any, List, Dict, Union, Optional  # noqa: F401
 from abc import ABC, abstractmethod
 
 
