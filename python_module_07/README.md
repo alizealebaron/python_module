@@ -24,7 +24,7 @@
 
 ## 💡 Inspirations && Sources
 
-- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
-- 
+- [github.com/overtekk/python_module_07](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2007)
+- [github.com/Tsuunen/python_module_07](https://github.com/Tsuunen/python_module_07/blob/main/ex0/Card.py)
 
 **Contact :** alebaron@student.42lehavre.fr
