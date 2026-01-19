@@ -6,13 +6,11 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 0026/01/19 10:47:26 by lebaron         #+#    #+#               #
-#  Updated: 2026/01/19 11:40:16 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/19 12:09:04 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-
 import alchemy
-
 
 if __name__ == "__main__":
 
@@ -21,10 +19,12 @@ if __name__ == "__main__":
     # === Test 1 : Accès direct au éléments ===
     print("Testing direct module access:")
 
-    print(f"alchemy.elements.create_fire():{alchemy.elements.create_fire()}")
-    print(f"alchemy.elements.create_water():{alchemy.elements.create_water()}")
-    print(f"alchemy.elements.create_earth():{alchemy.elements.create_earth()}")
-    print(f"alchemy.elements.create_air():{alchemy.elements.create_air()}")
+    print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")
+    print(f"alchemy.elements.create_water(): "
+          f"{alchemy.elements.create_water()}")
+    print(f"alchemy.elements.create_earth(): "
+          f"{alchemy.elements.create_earth()}")
+    print(f"alchemy.elements.create_air(): {alchemy.elements.create_air()}")
 
     # === Test 2 : Accès par __init__.py ===
     print("\nTesting package-level access (controlled by __init__.py):")
