@@ -24,7 +24,7 @@
 
 ## 💡 Inspirations && Sources
 
-- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
-- 
+- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2006)
+- [github.com//Tsuunen/python_module_06](https://github.com/Tsuunen/python_module_06)
 
 **Contact :** alebaron@student.42lehavre.fr

@@ -2,7 +2,7 @@
   <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module_simple.png" width="120"/>
 </p>
 <h3 align="center">
-  <em>Cyber Archives Training Program</em>
+  <em>Master the Art of Abstract Card Architecture</em>
 </h3>
 
 ---
@@ -16,16 +16,15 @@
 
 ## 🦆 Status
 
-**Commencé le :** 09/01/2026.
+**Commencé le :** 19/01/2026.
 
-**Rendu le :** 13/01/2026.
+**Rendu le :** Non rendu.
 
-**Note :** 100/100.
+**Note :** Non noté.
 
 ## 💡 Inspirations && Sources
 
-- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2004)
-- [geeksforgeeks.org/how-to-read-file](https://www.geeksforgeeks.org/python/how-to-read-from-a-file-in-python/)
-- [python.doctor/lire-ecrire-creer-fichier-python](https://python.doctor/page-lire-ecrire-creer-fichier-python)
+- [github.com/overtekk/python_module](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2001)
+- 
 
 **Contact :** alebaron@student.42lehavre.fr
