@@ -6,14 +6,14 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 0026/01/19 11:36:31 by lebaron         #+#    #+#               #
-#  Updated: 2026/01/19 11:52:24 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/19 12:22:36 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 import alchemy.elements
 
 
-def healing_potion():
+def healing_potion() -> str:
 
     fire = alchemy.elements.create_fire()
     water = alchemy.elements.create_water()
@@ -21,7 +21,7 @@ def healing_potion():
     return (f"Healing potion brewed with {fire} and {water}")
 
 
-def strength_potion():
+def strength_potion() -> str:
 
     fire = alchemy.elements.create_fire()
     earth = alchemy.elements.create_earth()
@@ -29,7 +29,7 @@ def strength_potion():
     return (f"Strength potion brewed with {earth} and {fire}")
 
 
-def invisibility_potion():
+def invisibility_potion() -> str:
 
     air = alchemy.elements.create_air()
     water = alchemy.elements.create_water()
@@ -37,7 +37,7 @@ def invisibility_potion():
     return (f"Strength potion brewed with {air} and {water}")
 
 
-def wisdom_potion():
+def wisdom_potion() -> str:
 
     air = alchemy.elements.create_air()
     water = alchemy.elements.create_water()

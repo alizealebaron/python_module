@@ -6,32 +6,32 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 0026/01/19 11:36:59 by lebaron         #+#    #+#               #
-#  Updated: 2026/01/19 12:19:30 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/19 12:29:31 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-def full_import():
+def full_import() -> None:
     import alchemy.elements
 
     print("Method 1 - Full module import:")
     print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")
 
 
-def spec_import():
+def spec_import() -> None:
     from alchemy.elements import create_water
 
     print("\nMethod 2 - Specific function import:")
     print(f"alchemy.elements.create_fire(): {create_water()}")
 
 
-def alias_import():
+def alias_import() -> None:
     from alchemy.potions import healing_potion as heal
 
     print("\nMethod 3 - Aliased import:")
     print(f"heal(): {heal()}")
 
 
-def multi_import():
+def multi_import() -> None:
     from alchemy.elements import create_earth, create_fire
     from alchemy.potions import strength_potion
 
