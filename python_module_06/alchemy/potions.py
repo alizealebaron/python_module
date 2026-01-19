@@ -1,27 +1,12 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  elements.py                                       :+:      :+:    :+:    #
+#  potions.py                                        :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 0026/01/19 11:09:30 by lebaron         #+#    #+#               #
-#  Updated: 2026/01/19 11:39:12 by alebaron        ###   ########.fr        #
+#  Created: 0026/01/19 11:36:31 by lebaron         #+#    #+#               #
+#  Updated: 2026/01/19 11:40:07 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-
-def create_fire() -> str:
-    return "Fire element created"
-
-
-def create_water() -> str:
-    return "Water element created"
-
-
-def create_earth() -> str:
-    return "Earth element created"
-
-
-def create_air() -> str:
-    return "Air element created"
