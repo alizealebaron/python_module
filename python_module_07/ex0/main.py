@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/19 13:28:26 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/19 16:21:45 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/20 11:54:47 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     print(f"\n{card1.name} attacks {card2.name}:")
     print(f"Attack result: {card1.attack_target(card2)}")
-    
+
     mana = 3
     print(f"\nTesting insufficient mana ({mana} available):")
     print(f"Playable: {card2.is_playable(mana)}")

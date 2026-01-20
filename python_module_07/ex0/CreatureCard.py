@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/19 13:28:14 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/19 16:21:13 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/20 11:54:37 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,26 +14,29 @@
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
-from typing import Dict
-from abc import ABC, abstractmethod
+
 from .Card import Card, Rarity
+
 
 # +----------------------------------------------------------------+
 # |                            Classe                              |
 # +----------------------------------------------------------------+
 
 class CreatureCard(Card):
-    
+
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, name: str, cost: int, rarity: Rarity, attack: int, health: int) -> None:
+    def __init__(self, name: str, cost: int, rarity: Rarity,
+                 attack: int, health: int) -> None:
 
         try:
             if attack <= 0:
+                attack = 100
                 raise ValueError("Attack must be a positive number.")
             if health <= 0:
+                health = 100
                 raise ValueError("Health must be a positive number.")
         except ValueError as e:
             print(f"Error: {e}")
@@ -59,7 +62,7 @@ class CreatureCard(Card):
 
     def play(self, game_state: dict) -> dict:
         try:
-            mana = game_state["mana_left"];
+            _ = game_state["mana_left"]
             return {
                 "card_played": self.name,
                 "mana_used": self.cost,
@@ -97,4 +100,3 @@ class CreatureCard(Card):
                 "damage_dealt": self.attack,
                 "combat_resolved": True
             }
-    
