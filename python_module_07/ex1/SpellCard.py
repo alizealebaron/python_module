@@ -1,12 +1,12 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  CreatureCard.py                                   :+:      :+:    :+:    #
+#  SpellCard.py                                      :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/01/19 13:28:14 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/20 14:09:51 by alebaron        ###   ########.fr        #
+#  Created: 2026/01/20 11:29:58 by alebaron        #+#    #+#               #
+#  Updated: 2026/01/20 14:49:13 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,51 +15,43 @@
 # +----------------------------------------------------------------+
 
 
-from .Card import Card, Rarity
+from ex0.CreatureCard import CreatureCard
+from ex0.Card import Card, Rarity
+from enum import Enum
+
+
+# +----------------------------------------------------------------+
+# |                           Type Enum                            |
+# +----------------------------------------------------------------+
+
+class Effect_Type(Enum):
+    """"Enum class for rarity type."""
+    DAMAGE = "Deal 300 damage to target"
+    HEAL = "Heal 300 health to target"
+    BUFF = "Target gains 300 attack"
+    DEBUFF = "Target loose 300 attack"
 
 
 # +----------------------------------------------------------------+
 # |                            Classe                              |
 # +----------------------------------------------------------------+
 
-class CreatureCard(Card):
+class SpellCard(Card):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
     def __init__(self, name: str, cost: int, rarity: Rarity,
-                 attack: int, health: int) -> None:
-
-        try:
-            if attack <= 0:
-                attack = 100
-                raise ValueError("Attack must be a positive number.")
-            if health <= 0:
-                health = 100
-                raise ValueError("Health must be a positive number.")
-        except ValueError as e:
-            print(f"Error: {e}")
+                 effect_type: Effect_Type):
 
         super().__init__(name, cost, rarity)
-
-        self.attack = attack
-        self.health = health
-        self.type = "Creature"
+        self.effect_type = effect_type
+        self.type = "Spell"
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
-
-    def get_card_info(self):
-        return ({
-            "name": self.name,
-            "cost": self.cost,
-            "rarity": self.rarity.value,
-            "type": "Creature",
-            "attack": self.attack,
-            "health": self.health
-        })
 
     def play(self, game_state: dict) -> dict:
         try:
@@ -67,7 +59,7 @@ class CreatureCard(Card):
             return {
                 "card_played": self.name,
                 "mana_used": self.cost,
-                "effect": "Creature summoned to battlefield"
+                "effect": self.effect_type.value
             }
         except KeyError:
             return {
@@ -76,28 +68,15 @@ class CreatureCard(Card):
                 "effect": None
             }
 
-    def attack_target(self, target: Card) -> dict:
+    def resolve_effect(self, targets: list[CreatureCard]) -> dict:
+        for target in targets:
+            if self.effect_type == Effect_Type.HEAL:
+                target.health += 300
+            elif self.effect_type == Effect_Type.DAMAGE:
+                target.health -= 300
+            elif self.effect_type == Effect_Type.BUFF:
+                target.attack += 300
+            else:
+                target.attack -= 300
 
-        try:
-            if (target.health <= 0 or self.health <= 0):
-                return {
-                    "attacker": self.name,
-                    "target": target.name,
-                    "damage_dealt": 0,
-                    "combat_resolved": False
-                }
-        except (AttributeError, KeyError):
-            return {
-                "attacker": self.name,
-                "target": "Target invalid",
-                "damage_dealt": 0,
-                "combat_resolved": False
-            }
-        else:
-            target.health -= self.attack
-            return {
-                "attacker": self.name,
-                "target": target.name,
-                "damage_dealt": self.attack,
-                "combat_resolved": True
-            }
+        return ({"effect": self.effect_type.value})
