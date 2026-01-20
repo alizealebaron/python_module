@@ -18,9 +18,9 @@
 
 **Commencé le :** 17/01/2026.
 
-**Rendu le :** Non rendu.
+**Rendu le :** 20/01/2026.
 
-**Note :** Non noté.
+**Note :** 100/100.
 
 ## 💡 Inspirations && Sources
 
