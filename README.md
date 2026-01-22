@@ -7,6 +7,9 @@
 
 ---
 
+> [!WARNING]  
+> Les sujets des modules python ont été modifiés et changés pendant la réalisation des exercices. Certains exercices seront peut-être déjà dépassé et différent de ceux que vous aurez à programmer.
+
 ## Introduction à python
 
 Depuis la piscine et le début du tronc commun nous avons été habitué à utiliser le langage C. Bien que celui-ci soit très intéressant, il est temps d'apprendre à utiliser du python.
