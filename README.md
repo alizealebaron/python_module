@@ -7,7 +7,7 @@
 
 ---
 
-> [!WARNING]  
+> [!CAUTION]  
 > Les sujets des modules python ont été modifiés et changés pendant la réalisation des exercices. Certains exercices seront peut-être déjà dépassé et différent de ceux que vous aurez à programmer.
 
 ## Introduction à python
