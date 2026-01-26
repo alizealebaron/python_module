@@ -1,12 +1,12 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  Card.py                                           :+:      :+:    :+:    #
+#  Rankable.py                                       :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/01/19 13:32:21 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/26 11:50:37 by alebaron        ###   ########.fr        #
+#  Created: 2026/01/26 10:57:45 by alebaron        #+#    #+#               #
+#  Updated: 2026/01/26 11:24:54 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,56 +14,41 @@
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
+
 from abc import ABC, abstractmethod
-from enum import Enum
-
-# +----------------------------------------------------------------+
-# |                           Type Enum                            |
-# +----------------------------------------------------------------+
-
-
-class Rarity(Enum):
-    """"Enum class for rarity type."""
-    COMMON = "Common"
-    RARE = "Rare"
-    EPIC = "Epic"
-    LEGENDARY = "Legendary"
-    UNIQUE = "Unique"
 
 
 # +----------------------------------------------------------------+
-# |                       Classe abstraite                         |
+# |                            Classe                              |
 # +----------------------------------------------------------------+
 
-class Card(ABC):
+class Rankable(ABC):
 
     # +------------------------------------------------------------+
     # |                        Constructeur                        |
     # +------------------------------------------------------------+
 
-    def __init__(self, name: str, cost: int, rarity: Rarity):
-
-        if cost < 0:
-            cost = 1
-
-        self.name = name
-        self.cost = cost
-        self.rarity = rarity
+    def __init__(self, rating: int):
+        self.wins = 0
+        self.losses = 0
+        self.rating = rating
 
     # +------------------------------------------------------------+
     # |                          Méthodes                          |
     # +------------------------------------------------------------+
 
     @abstractmethod
-    def play(self, game_state: dict) -> dict:
+    def calculate_rating(self) -> int:
         pass
 
-    def get_card_info(self) -> dict:
-        return {
-            "name": self.name,
-            "cost": self.cost,
-            "rarity": self.rarity.value
-        }
+    @abstractmethod
+    def update_wins(self, wins: int) -> None:
+        pass
 
-    def is_playable(self, available_mana: int) -> bool:
-        return (available_mana >= self.cost)
+    @abstractmethod
+    def update_losses(self, losses: int) -> None:
+        pass
+
+    @abstractmethod
+    def get_rank_info(self) -> dict:
+        pass
