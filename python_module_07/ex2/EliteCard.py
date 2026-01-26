@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/20 14:52:03 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/22 11:22:45 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:24 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,8 +15,8 @@
 # +----------------------------------------------------------------+
 
 
-from .Combatable import Combatable
-from .Magical import Magical
+from ex2.Combatable import Combatable
+from ex2.Magical import Magical
 from ex0.Card import Card, Rarity
 
 

@@ -6,13 +6,13 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/22 11:02:55 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/26 10:53:53 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:57:10 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from .GameEngine import GameEngine
-from .AggressiveStrategy import AggressiveStrategy
-from .FantasyCardFactory import FantasyCardFactory
+from ex3.GameEngine import GameEngine
+from ex3.AggressiveStrategy import AggressiveStrategy
+from ex3.FantasyCardFactory import FantasyCardFactory
 
 if __name__ == "__main__":
 

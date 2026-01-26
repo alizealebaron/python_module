@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/22 11:02:18 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/26 10:48:36 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:39 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,7 +15,7 @@
 # +----------------------------------------------------------------+
 
 
-from .GameStrategy import GameStrategy
+from ex3.GameStrategy import GameStrategy
 from ex0.Card import Card
 
 

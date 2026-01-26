@@ -6,12 +6,12 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/19 13:28:26 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/20 11:54:47 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:55:47 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from .CreatureCard import CreatureCard
-from .Card import Rarity
+from ex0.CreatureCard import CreatureCard
+from ex0.Card import Rarity
 
 if __name__ == "__main__":
     print("=== DataDeck Card Foundation ===\n")

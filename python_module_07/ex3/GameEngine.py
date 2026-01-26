@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/22 11:02:45 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/26 10:53:20 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:59 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,8 +15,8 @@
 # +----------------------------------------------------------------+
 
 
-from .CardFactory import CardFactory
-from .GameStrategy import GameStrategy
+from ex3.CardFactory import CardFactory
+from ex3.GameStrategy import GameStrategy
 import random
 
 

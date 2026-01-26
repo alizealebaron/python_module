@@ -6,13 +6,13 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/20 14:51:57 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/20 17:11:53 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:31 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from ex0.Card import Rarity
 from ex0.CreatureCard import CreatureCard
-from .EliteCard import EliteCard
+from ex2.EliteCard import EliteCard
 
 if __name__ == "__main__":
 

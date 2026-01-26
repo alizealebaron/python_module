@@ -6,15 +6,15 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/20 11:29:48 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/20 14:49:35 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:03 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from ex0.Card import Rarity
 from ex0.CreatureCard import CreatureCard
-from .SpellCard import SpellCard, Effect_Type
-from .ArtifactCard import ArtifactCard
-from .Deck import Deck
+from ex1.SpellCard import SpellCard, Effect_Type
+from ex1.ArtifactCard import ArtifactCard
+from ex1.Deck import Deck
 
 if __name__ == "__main__":
 

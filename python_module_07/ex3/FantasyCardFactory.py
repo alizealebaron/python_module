@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/22 11:02:34 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/26 10:52:46 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/26 10:56:51 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -15,7 +15,7 @@
 # +----------------------------------------------------------------+
 
 
-from .CardFactory import CardFactory
+from ex3.CardFactory import CardFactory
 from ex0.Card import Card, Rarity
 from ex1.SpellCard import SpellCard, Effect_Type
 from ex1.ArtifactCard import ArtifactCard
