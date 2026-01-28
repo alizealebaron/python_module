@@ -3,10 +3,10 @@
 #                                                      :::      ::::::::    #
 #  construct.py                                      :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
-#  By: alebaron <alebaron@student.42lehavre.fr   +#+  +:+       +#+         #
+#  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/27 13:24:20 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/27 14:21:48 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/28 11:24:31 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -36,6 +36,10 @@ def env():
 
 	print("SUCCESS: You're in an isolated environment!")
 	print("Safe to install packages without affecting the global system.\n")
+
+	# Pour récupéré le chemin d'installation de package
+	# On récupère tous et on affiche uniquement le 1er
+	# C'est celui qui sera utilisé par défaut
 
 	print("Package installation path:")
 	print(f"{site.getsitepackages()[0]}")
@@ -69,6 +73,8 @@ def not_env():
 
 if __name__ == "__main__":
 
+	# Si base_prefix est différent de prefix :
+	# On est dans un environnement
 	if (sys.base_prefix == sys.prefix):
 		not_env()
 	else:
