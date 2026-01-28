@@ -91,7 +91,7 @@ Pour installer les dépendances depuis un fichier :
 pip install -r requirements.txt
 ```
 
-Voilà qui conclu les base de l'utilisation des environnements python !
+Voilà qui conclu les base de l'utilisation des environnements python avec pip (pour poetry, je vous laisse chercher c:) !
 
 ## 💡 Inspirations && Sources
 
