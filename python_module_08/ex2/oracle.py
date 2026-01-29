@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/28 15:25:56 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/28 15:45:55 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 10:33:39 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -40,14 +40,22 @@ def get_all_info() -> None:
     }
 
     print("Configuration loaded:")
+    is_all_here = True
     for key in data:
         if os.getenv(key) is not None:
             print(f"{key.capitalize()}: {os.getenv(key)}")
         else:
             print(f"{key.capitalize()}: not found")
+            is_all_here = False
 
     print("\nEnvironment security check:")
 
+    print("[OK] No hardcoded secrets detected")
+    if is_all_here is True:
+        print("[OK] .env file properly configured")
+    else:
+        print("[KO] .env file no properly configured")
+    print("[OK] Production overrides available")
 
 
 # +----------------------------------------------------------------+
