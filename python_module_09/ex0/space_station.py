@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/29 10:57:29 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/29 15:16:05 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 16:27:30 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -23,6 +23,7 @@ try:
 except ModuleNotFoundError:
     print("Error: Install pydantic before execute this program.")
     sys.exit(2)
+
 
 # +----------------------------------------------------------------+
 # |                           Modèles                              |
