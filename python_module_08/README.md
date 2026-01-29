@@ -18,9 +18,9 @@
 
 **Commencé le :** 27/01/2026.
 
-**Rendu le :** Non rendu.
+**Rendu le :** 29/01/2026.
 
-**Note :** Non noté.
+**Note :** 100/100.
 
 ## Quelques notes sur l'utilisation des environnements
 
@@ -98,5 +98,6 @@ Voilà qui conclu les base de l'utilisation des environnements python avec pip (
 - [github.com/overtekk/python_module_08](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2008)
 - [blog.stephane-robert.info/python/environnements-virtuels](https://blog.stephane-robert.info/docs/developper/programmation/python/environnements-virtuels/)
 - [betterstack.com/guides/poetry-vs-pip](https://betterstack.com/community/guides/scaling-python/poetry-vs-pip/)
+- [github.com/shadox254/python_module_08](https://github.com/shadox254/Module-Python/tree/main/Module-08)
 
 **Contact :** alebaron@student.42lehavre.fr
