@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/28 11:28:34 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/28 15:08:58 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 10:35:32 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -28,13 +28,13 @@ def check_dependency() -> bool:
     is_okay = True
 
     for package in lst_package:
-        
+
         # On essaie d'importer une à une les librairies
         try:
             name = importlib.util.find_spec(package)
             if name is None:
                 print(f"[KO] {package} : Not installed.")
-                is_okay = False 
+                is_okay = False
             else:
                 name = __import__(package)
                 version = name.__version__
@@ -47,14 +47,15 @@ def check_dependency() -> bool:
                     print("Visualization ready")
         except (Exception, AttributeError):
             print(f"[KO] {package} : Not installed.")
-            is_okay = False 
+            is_okay = False
 
     return is_okay
+
 
 def analyzing_data():
     import pandas
     import matplotlib.pyplot as plt
-    
+
     print("Processing 1000 data points...")
 
     # On génère une matrice de données avec panda
@@ -78,6 +79,7 @@ def analyzing_data():
 
     print("Analysis complete!")
     print(f"Result saved to: {filename}")
+
 
 # +----------------------------------------------------------------+
 # |                             Main                               |

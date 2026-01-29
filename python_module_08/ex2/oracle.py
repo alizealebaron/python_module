@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/28 15:25:56 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/29 10:33:39 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 10:34:46 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,13 +14,14 @@
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
+
 import os
-import sys
 
 try:
     from dotenv import load_dotenv
 except ModuleNotFoundError:
     print("Error: Install python-doenv before execute this program.")
+
 
 # +----------------------------------------------------------------+
 # |                           Méthodes                             |
@@ -65,7 +66,7 @@ def get_all_info() -> None:
 if __name__ == "__main__":
 
     print("ORACLE STATUS: Reading the Matrix...\n")
-    
+
     get_all_info()
-    
+
     print("\nThe Oracle sees all configurations.")
