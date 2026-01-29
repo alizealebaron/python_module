@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/29 15:43:55 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/29 16:54:01 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 17:28:18 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -25,15 +25,18 @@ except ModuleNotFoundError:
     print("Error: Install pydantic before execute this program.")
     exit(2)
 
+
 # +----------------------------------------------------------------+
 # |                            Enum                                |
 # +----------------------------------------------------------------+
+
 
 class ContactType(Enum):
     RADIO = "Radio"
     VISUAL = "Visual"
     PHYSICAL = "Physical"
     TELEPATHIC = "Telepathic"
+
 
 # +----------------------------------------------------------------+
 # |                           Modèles                              |
@@ -52,17 +55,25 @@ class AlienContact(BaseModel):
     is_verified: bool = False
 
     @model_validator(mode='after')
-    def check_passwords_match(self) -> Self:
-        if self.contact_id.startswith("AC") is False:
+    def check_validation(self) -> 'Self':
+        if not self.contact_id.startswith("AC"):
             raise ValueError("Contact_id must start with \"AC\".")
-        if self.contact_type == ContactType.PHYSICAL and self.is_verified is False:
+
+        if (self.contact_type == ContactType.PHYSICAL
+                and not self.is_verified):
             raise ValueError("Physical contact must be verified.")
-        if self.contact_type == ContactType.TELEPATHIC and self.witness_count < 3:
-            raise ValueError("Telepathic contact requires at least 3 witnesses.")
+
+        if (self.contact_type == ContactType.TELEPATHIC
+                and self.witness_count < 3):
+            raise ValueError("Telepathic contact requires "
+                             "at least 3 witnesses.")
+
         if self.signal_strength > 7 and self.message_received is None:
-            raise ValueError("Strong signals (> 7.0) should include received messages")
+            raise ValueError("Strong signals (> 7.0) should "
+                             "include received messages")
 
         return self
+
 
 # +----------------------------------------------------------------+
 # |                           Méthodes                             |
@@ -79,17 +90,19 @@ def create_contact(data: dict) -> AlienContact | None:
             print(error["msg"])
         return None
 
+
 def print_contact(contact: AlienContact | None) -> None:
 
     if (contact is not None):
 
         print(f"ID: {contact.contact_id}")
-        print(f"Type: {contact.contact_type}")
+        print(f"Type: {contact.contact_type.value}")
         print(f"Location: {contact.location}")
         print(f"Signal: {contact.signal_strength}/10")
         print(f"Duration: {contact.duration_minutes} minutes%")
         print(f"Witnesses: {contact.witness_count}")
         print(f"Message: {contact.message_received}")
+
 
 # +----------------------------------------------------------------+
 # |                             Main                               |
@@ -119,6 +132,8 @@ if __name__ == "__main__":
     print_contact(contact)
 
     print("======================================")
+
+    # === Test 1 : Contact Invalide ===
 
     data = {
         'contact_id': 'AC_2024_001',

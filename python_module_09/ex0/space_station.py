@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/29 10:57:29 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/29 16:27:30 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/29 17:24:54 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -55,18 +55,20 @@ def create_station(data: dict) -> SpaceStation | None:
             print(error["msg"])
         return None
 
+
 def print_station(station: SpaceStation | None) -> None:
 
     if (station is not None):
-        ope = ('Operational' 
-            if station.is_operational else 'Nonoperational')
-        
+        ope = ('Operational'
+               if station.is_operational else 'Nonoperational')
+
         print(f"ID: {station.station_id}")
         print(f"Name: {station.name}")
         print(f"Crew: {station.crew_size} people")
         print(f"Power: {station.power_level}%")
         print(f"Oxygen: {station.oxygen_level}%")
         print(f"Status: {ope}")
+
 
 def main():
 
