@@ -6,14 +6,9 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/31 11:34:11 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/31 14:30:24 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/31 15:32:22 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-
-# +----------------------------------------------------------------+
-# |                         Importations                           |
-# +----------------------------------------------------------------+
-
 
 
 # +----------------------------------------------------------------+
@@ -22,16 +17,17 @@
 
 def artifact_sorter(artifacts: list[dict]) -> list[dict]:
 
-    return sorted(artifacts, key=lambda artifact: artifact["power"], reverse=True)
+    return sorted(artifacts, key=lambda artifact: artifact["power"],
+                  reverse=True)
 
 
 def power_filter(mages: list[dict], min_power: int) -> list[dict]:
-    
+
     return list(filter(lambda mage: mage["power"] >= min_power, mages))
 
 
 def spell_transformer(spells: list[str]) -> list[str]:
-    
+
     return list(map(lambda spell: "* " + spell + " *", spells))
 
 
@@ -39,9 +35,9 @@ def mage_stats(mages: list[dict]) -> dict:
 
     min_power = min(mages, key=lambda mage: mage["power"])
     max_power = max(mages, key=lambda mage: mage["power"])
-    avg_power = round(sum(map(lambda x: x['power'], mages)) / 
+    avg_power = round(sum(map(lambda x: x['power'], mages)) /
                       len(mages), 2)
-    
+
     return {
         "max_power": max_power["power"],
         "min_power": min_power["power"],
@@ -80,7 +76,7 @@ if __name__ == "__main__":
     print(f"Mage list before filter :\n{lst_mage}")
 
     lst_mage = power_filter(lst_mage, 65)
-    
+
     print(f"Mage list before filter :\n{lst_mage}")
 
     print("\n=========== Test : spell_transformer ===========\n")
@@ -90,7 +86,7 @@ if __name__ == "__main__":
     print(f"Spell list before map :\n{lst_spell}")
 
     lst_spell = spell_transformer(lst_spell)
-    
+
     print(f"Spell list before map :\n{lst_spell}")
 
     print("\n=========== Test : mage_stats ===========\n")
@@ -100,5 +96,5 @@ if __name__ == "__main__":
     print(f"Mage list :\n{lst_mage}")
 
     result = mage_stats(lst_mage)
-    
+
     print(f"Stats result:\n{result}")
