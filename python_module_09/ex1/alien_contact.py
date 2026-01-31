@@ -6,7 +6,7 @@
 #  By: alebaron <alebaron@student.42.fr>         +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/01/29 15:43:55 by alebaron        #+#    #+#               #
-#  Updated: 2026/01/29 17:28:18 by alebaron        ###   ########.fr        #
+#  Updated: 2026/01/31 11:25:41 by alebaron        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,13 +14,13 @@
 # |                         Importations                           |
 # +----------------------------------------------------------------+
 
-from typing_extensions import Self
 from enum import Enum
 from datetime import datetime
 from typing import Optional
 
 try:
     from pydantic import BaseModel, Field, ValidationError, model_validator
+    from typing_extensions import Self
 except ModuleNotFoundError:
     print("Error: Install pydantic before execute this program.")
     exit(2)
