@@ -27,5 +27,7 @@
 - [github.com/overtekk/python_module_10](https://github.com/Overtekk/Python-Module-00-10/tree/main/Python%20Module%2010)
 - [github.com/shadox254/python_module_10](https://github.com/shadox254/Module-Python/tree/main/Module-10)
 - [geeksforgeeks.org/python/python-map-function](https://www.geeksforgeeks.org/python/python-map-function/)
+- [docs.kanaries.net/Python/functools-python3](https://docs.kanaries.net/fr/topics/Python/functools-python3)
+- [geeksforgeeks.org/python/singledispatch-functools/](https://www.geeksforgeeks.org/python/function-overloading-with-singledispatch-functools/)
 
 **Contact :** alebaron@student.42lehavre.fr
