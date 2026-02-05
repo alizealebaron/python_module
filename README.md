@@ -7,6 +7,14 @@
 
 ---
 
+<div align="center">
+  <p>
+      <img src="https://img.shields.io/github/languages/count/alizealebaron/python_module?style=for-the-badge&logo=" />
+      <img src="https://img.shields.io/github/languages/top/alizealebaron/python_module?style=for-the-badge" />
+      <img src="https://img.shields.io/github/last-commit/alizealebaron/python_module?style=for-the-badge" />
+  </p>
+</div>
+
 > [!CAUTION]  
 > Les sujets des modules python ont été modifiés et changés pendant la réalisation des exercices. Certains exercices seront peut-être déjà dépassé et différent de ceux que vous aurez à programmer.
 
