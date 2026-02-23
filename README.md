@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module_simple.png" width="120"/>
+  <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module.png" width="120"/>
 </p>
 <h3 align="center">
   <em>Python Fundamentals Through Garden Data</em>
