@@ -2,7 +2,7 @@
   <img src="https://github.com/alizealebaron/alizealebaron/blob/main/assets/python-module.png" width="120"/>
 </p>
 <h3 align="center">
-  <em>Python Fundamentals Through Garden Data</em>
+  <em>Python Fundamentals</em>
 </h3>
 
 ---
